@@ -31,12 +31,12 @@ export const PROFILE = {
     "Dart",
     "Kotlin",
     "Ktor",
+    "React Native",
+    "SQL",
+    "MongoDB",
     "Android",
     "Postgres",
-    "Redis",
     "AWS",
-    "Supabase",
-    "Firebase",
     "Fullstack Development",
     "AI Agents",
     "Prompt Engineering",
@@ -44,10 +44,10 @@ export const PROFILE = {
   links: {
     github: "https://github.com/nikb7",
     // Add more if needed
-    // linkedin: "https://linkedin.com/in/nikb7",
-    // twitter: "https://twitter.com/nikb7",
+    linkedin: "https://www.linkedin.com/in/nikhil-bansal-07/",
+    twitter: "https://x.com/_BansalNikhil",
     // instagram: "https://instagram.com/nikb7",
-    // maya: "https://instagram.com/thatcutemaya", // if you want to showcase Maya too :)
+    mayainstagram: "https://www.instagram.com/maya_the_minihusky", // if you want to showcase Maya too :)
   },
   studies: [
     {
