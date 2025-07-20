@@ -1,7 +1,7 @@
 ---
 import {Button} from '../ui/button'
 import {PROFILE} from "../../content/profileData";
-import {Linkedin, Github, Mail, Youtube, Twitter, Rss, Book, PanelsTopLeft, Instagram} from 'lucide-react'
+import {Linkedin, Github, Twitter, Instagram} from 'lucide-react'
 ---
 
 <div class="flex h-full w-full animate-appear">
@@ -48,12 +48,6 @@ import {Linkedin, Github, Mail, Youtube, Twitter, Rss, Book, PanelsTopLeft, Inst
         <Button>
           <Twitter/>
           <span class="sr-only">X profile</span>
-        </Button>
-      </a>
-      <a href={PROFILE.links.email} aria-label="email" target="_blank">
-        <Button>
-          <Mail/>
-          <span class="sr-only">Email</span>
         </Button>
       </a>
       <a href={PROFILE.links.mayainstagram} aria-label="maya's instagram profile" target="_blank">
