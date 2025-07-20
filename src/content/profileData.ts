@@ -43,6 +43,7 @@ export const PROFILE = {
   ],
   links: {
     github: "https://github.com/nikb7",
+    email: "mailto:me@nikb.in",
     // Add more if needed
     linkedin: "https://www.linkedin.com/in/nikhil-bansal-07/",
     twitter: "https://x.com/_BansalNikhil",
