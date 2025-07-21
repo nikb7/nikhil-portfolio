@@ -15,7 +15,7 @@ export const PROFILE = {
     "I love solving real-world problems with clean code, thoughtful UX, and empowered teams.",
   website: "https://nikb.in",
   repo: "https://github.com/nikb7",
-  avatarUrl: "https://nikb.in/avatar.webp", // replace with actual hosted image if needed
+  avatarUrl: "/nikhil-bansal.webp", // replace with actual hosted image if needed
   shortIntros: [
     "👨‍💻 Fullstack Engineer | Flutter, Kotlin, Ktor | Ex-CTO @ Kuddle",
     "🐶 Built a petcare startup from 0 → 1, acquired by Vetic",
