@@ -3,7 +3,7 @@ export const PROFILE = {
     SEO: {
       title: "Nikhil Bansal (@nikb7) – Building Products with Purpose ❤️",
       description:
-        "Nikhil Bansal – Fullstack Engineer | Ex-CTO @ Kuddle | Flutter, Kotlin, Ktor | Building with ❤️ from Bangalore. Sharing my journey through startups, code, and a dog named Maya 🐶.",
+        "Nikhil Bansal – Fullstack Engineer | Co-founder & CTO @ Kuddle | Flutter, Kotlin, Ktor | Building with ❤️ from Bangalore. Sharing my journey through startups, code, and a dog named Maya 🐶.",
     },
   },
   timezone: "Asia/Kolkata",
@@ -17,7 +17,7 @@ export const PROFILE = {
   repo: "https://github.com/nikb7",
   avatarUrl: "/nikhil-bansal.webp", // replace with actual hosted image if needed
   shortIntros: [
-    "👨‍💻 Fullstack Engineer | Flutter, Kotlin, Ktor | Ex-CTO @ Kuddle",
+    "👨‍💻 Fullstack Engineer | Flutter, Kotlin, Ktor | Co-founder & CTO @ Kuddle",
     "🐶 Built a petcare startup from 0 → 1, acquired by Vetic",
     "🌱 Exploring the intersection of AI, product, and storytelling",
     "📲 Passionate about dev experience, mobile UX, and infra that scales",
