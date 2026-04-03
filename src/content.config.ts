@@ -1,8 +1,10 @@
 // Import utilities from `astro:content`
 import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+
 // Define a `type` and `schema` for each collection
 const projectCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
     startDate: z.date(),
@@ -18,7 +20,7 @@ const projectCollection = defineCollection({
 });
 
 const experienceCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/experiences" }),
   schema: z.object({
     title: z.string(),
     startDate: z.date(),
@@ -29,7 +31,7 @@ const experienceCollection = defineCollection({
 });
 
 const bookCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/books" }),
   schema: z.object({
     title: z.string(),
     readYear: z.number(),
@@ -39,7 +41,7 @@ const bookCollection = defineCollection({
 });
 
 const postCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/posts" }),
   schema: z.object({
     title: z.string(),
     startDate: z.date(),

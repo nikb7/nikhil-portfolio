@@ -21,7 +21,7 @@ projects = projects.slice(0, 3);
     projects.slice(0, 3).map((project) => (
       <div>
         <h3 class="text-lg font-semibold text-primary">
-          <a href={`/projects/${project.slug}`} class="hover:underline">
+          <a href={`/projects/${project.id}`} class="hover:underline">
             {project.data.title}
           </a>
         </h3>

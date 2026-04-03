@@ -25,11 +25,11 @@ experiences.sort((a, b) => {
     <TableBody>
       {
         experiences.map((entry) => (
-          <TableRow key={entry.slug}>
+          <TableRow key={entry.id}>
             <TableCell className="font-medium ">
               <div class="flex flex-col gap-1 min-w-20">
                 <a
-                  href={'/experiences/' + entry.slug ?? ''}
+                  href={'/experiences/' + entry.id ?? ''}
                   class={`font-semibold hover:font-extrabold ${entry?.slug ? 'text-primary' : 'text-foreground'}`}
                 >
                   {entry.data.title}
@@ -55,7 +55,7 @@ experiences.sort((a, b) => {
               </div>
             </TableCell>
             <TableCell>
-              <a href={'/experiences/' + entry.slug}>
+              <a href={'/experiences/' + entry.id}>
                 <ArrowRight/>
               </a>
             </TableCell>

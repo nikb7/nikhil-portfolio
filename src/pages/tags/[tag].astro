@@ -1,7 +1,7 @@
 ---
 import ProjectCard from 'src/components/ProjectCard.astro'
 import IndexPageLayout from "../../layouts/IndexPageLayout.astro";
-import { getAndGroupUniqueTags } from "../../lib/utils";
+import { getAndGroupUniqueTags } from "../../lib/content-utils";
 
 
 /**
@@ -32,7 +32,7 @@ const {items} = Astro.props;
   {
     items?.map((post) =>
       <>
-        <ProjectCard url={`/posts/${post.slug}/`} heading={post.data.title} subheading={post.data.description}
+        <ProjectCard url={`/posts/${post.id}/`} heading={post.data.title} subheading={post.data.description}
                      imagePath={post.data?.image?.url}
                      altText={post.data?.image?.alt} dateStart={post.data.startDate}
 
