@@ -40,18 +40,3 @@ import {PROFILE} from "../content/profileData";
     </nav>
   </div>
 </header>
-
-<script is:inline>
-  document.addEventListener('astro:after-swap', function () {
-    const isDarkAfterSwap = localStorage.getItem('theme') !== 'light'
-    document.documentElement.classList.toggle('dark', isDarkAfterSwap)
-  })
-
-  const getThemePreference = () => {
-    return localStorage.getItem('theme')
-  }
-
-  // Default to dark if no preference stored
-  const isDark = getThemePreference() !== 'light'
-  document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
-</script>
