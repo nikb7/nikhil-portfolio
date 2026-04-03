@@ -17,7 +17,7 @@ export const PROFILE = {
   repo: "https://github.com/nikb7",
   avatarUrl: "/nikhil-bansal.webp", // replace with actual hosted image if needed
   shortIntros: [
-    "👨‍💻 Fullstack Engineer | Flutter, Kotlin, Ktor | Co-founder & CTO @ Kuddle",
+    "👨‍💻 Fullstack Engineer | Flutter, Kotlin, Ktor | Former Co-founder & CTO @ Kuddle (acq. by Vetic)",
     "🐶 Built a petcare startup from 0 → 1, acquired by Vetic",
     "🌱 Exploring the intersection of AI, product, and storytelling",
     "📲 Passionate about dev experience, mobile UX, and infra that scales",
@@ -57,7 +57,7 @@ export const PROFILE = {
     },
     {
       title: "Self-taught Product Builder & Startup CTO",
-      institution: "Real World",
+      institution: "Experience",
     },
   ],
 };

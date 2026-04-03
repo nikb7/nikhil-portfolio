@@ -30,7 +30,7 @@ experiences.sort((a, b) => {
               <div class="flex flex-col gap-1 min-w-20">
                 <a
                   href={'/experiences/' + entry.id ?? ''}
-                  class={`font-semibold hover:font-extrabold ${entry?.slug ? 'text-primary' : 'text-foreground'}`}
+                  class={`font-semibold transition-colors duration-150 hover:text-primary ${entry?.slug ? 'text-primary' : 'text-foreground'}`}
                 >
                   {entry.data.title}
                 </a>
