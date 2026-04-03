@@ -1,21 +1,18 @@
 ---
-import Card from '../Card.astro'
-import { Badge } from '../ui/badge'
 import { shuffleArray } from "../../lib/utils";
 import { PROFILE } from "../../content/profileData";
-
 
 shuffleArray(PROFILE.studies)
 ---
 
-
-<div class="mt-2 flex w-full flex-wrap items-center justify-center gap-2">
+<div class="mt-2 flex w-full flex-wrap items-start gap-2">
   {
     PROFILE.studies.map((study) => (
-      <>
-        <Badge variant="outline">{study.title}</Badge>
-      </>
+      <div class="rounded px-3 py-2 text-xs leading-snug"
+           style="border: 1px solid var(--border-line); font-family: 'Plus Jakarta Sans', sans-serif; color: var(--parchment); opacity: 0.75; background: transparent;">
+        <p class="font-medium" style="opacity: 1;">{study.title}</p>
+        <p class="mt-0.5" style="color: var(--gold); font-family: 'DM Mono', monospace; font-size: 0.65rem; opacity: 0.8;">{study.institution}</p>
+      </div>
     ))
   }
 </div>
-

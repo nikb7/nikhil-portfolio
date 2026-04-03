@@ -4,12 +4,11 @@ import IntroCard from '../components/sections/IntroCard.astro'
 import AboutMe from '../components/sections/AboutMe.astro'
 import Card from '../components/Card.astro'
 import TimeZoneCard from '../components/sections/TimeZoneCard.astro'
-import Books from '../components/sections/Books.astro'
 import ExperienceCard from '../components/sections/ExperienceCard.astro'
 import Projects from '../components/sections/Projects.astro'
 import StudyCard from '../components/sections/StudyCard.astro'
 import { PROFILE } from "../content/profileData";
-import BlogCard from '../components/sections/BlogCard.astro'
+
 const SITE = PROFILE.site
 ---
 
@@ -17,13 +16,7 @@ const SITE = PROFILE.site
 <BaseLayout
   title={SITE.SEO.title}
   description={SITE.SEO.description}
-
 >
-  <div
-    slot="loader"
-    class="fixed top-0 right-0 bottom-0 left-0 z-50 flex h-screen w-screen items-center justify-center text-3xl font-black uppercase text-neutral-50 loader bg-darkslate-700"
-  >
-  </div>
   <main
     transition:animate="fade"
     class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-12 lg:gap-4"
@@ -46,17 +39,21 @@ const SITE = PROFILE.site
       <TimeZoneCard timezone={PROFILE.timezone} />
     </Card>
 
-
     <Card colSpan="lg:col-span-4 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2">
-      <div class="flex h-full flex-col justify-between">
-        <blockquote class="mt-6 border-l-2 pl-6 italic">
-          “{PROFILE.words[0]}”
+      <div class="flex h-full flex-col justify-center">
+        <p class="text-xs mb-3 uppercase tracking-widest" style="color: var(--gold); font-family: 'DM Mono', monospace; opacity: 0.6;">
+          Mantra
+        </p>
+        <blockquote
+          class="leading-relaxed"
+          style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.1rem, 2vw, 1.4rem); font-style: italic; color: var(--parchment); opacity: 0.9; border-left: 2px solid var(--gold); padding-left: 1rem;">
+          "{PROFILE.words[0]}"
         </blockquote>
-        <p class="mt-2 text-xs"></p>
       </div>
     </Card>
+
     <Card colSpan="md:col-span-1 lg:col-span-5" rowSpan="md:row-span-2 lg:row-span-2"
-          title="Education and Certificates">
+          title="Education & Certificates">
       <StudyCard/>
     </Card>
 
@@ -64,49 +61,26 @@ const SITE = PROFILE.site
       <ExperienceCard/>
     </Card>
 
-
-    {/* <Card colSpan="md:col-span-1 lg:col-span-6" rowSpan="md:row-span-1 lg:row-span-1" title="Blog Posts">
-      <BlogCard/>
-    </Card> */}
-    {/* <Card colSpan="md:col-span-1 lg:col-span-6" rowSpan="md:row-span-1 lg:row-span-1" title="Instagram Videos">
-      <InstagramVideos />
-    </Card> */}
-    {/* <Card colSpan="md:col-span-1 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Books I read">
-      <Books/>
-    </Card> */}
     <Card colSpan="md:col-span-1 lg:col-span-6" rowSpan="md:row-span-2 lg:row-span-1" title="Contact">
-      <div class="flex h-full w-full items-center justify-center text-center text-sm">
-        <i>
-          Please feel free to reach out to me through <a href={PROFILE.links.twitter} class="underline hover:font-bold">Twitter
-          message</a> or email me at <u>me@nikb.in</u>.
-        </i>
+      <div class="flex h-full w-full items-center justify-center text-center">
+        <p class="text-sm leading-relaxed" style="font-family: 'Plus Jakarta Sans', sans-serif; color: var(--parchment); opacity: 0.65;">
+          Let's build something together. Reach out via
+          <a href={PROFILE.links.twitter}
+             target="_blank"
+             style="color: var(--gold);"
+             onmouseover="this.style.textDecoration='underline'"
+             onmouseout="this.style.textDecoration='none'">
+            Twitter
+          </a>
+          or drop an email at
+          <a href={PROFILE.links.email}
+             style="color: var(--gold);"
+             onmouseover="this.style.textDecoration='underline'"
+             onmouseout="this.style.textDecoration='none'">
+            me@nikb.in
+          </a>
+        </p>
       </div>
     </Card>
-
-
   </main>
 </BaseLayout>
-
-<!--<script>-->
-<!--  // JS for animating the cards-->
-<!--  import { stagger, spring, timeline, type TimelineDefinition } from 'motion'-->
-<!--  import { loaderAnimation } from '../lib/constants'-->
-
-<!--  const cards = document.querySelectorAll('.card-animate')-->
-
-<!--  const sequence = [-->
-<!--    loaderAnimation,-->
-<!--    [-->
-<!--      cards,-->
-<!--      {y: ['40%', '0%'], opacity: [0, 1]},-->
-<!--      {-->
-<!--        at: '-0.1',-->
-<!--        duration: 0.2,-->
-<!--        delay: stagger(0.1),-->
-<!--        easing: spring({velocity: 200, stiffness: 50, damping: 10}),-->
-<!--      },-->
-<!--    ],-->
-<!--  ]-->
-
-<!--  timeline(sequence as TimelineDefinition)-->
-<!--</script>-->

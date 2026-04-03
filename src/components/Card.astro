@@ -1,6 +1,5 @@
 ---
 import ContentCard from './ContentCard.astro'
-import { Card as ShadcnCard } from './ui/card'
 import { SquareArrowOutUpRight } from 'lucide-react'
 
 interface Props {
@@ -15,17 +14,25 @@ interface Props {
 const { title, body, colSpan, rowSpan, href, colorText } = Astro.props
 ---
 
-<ShadcnCard
-  className={`card-animate transfor-y-[-40%] align-start perspective-1200 group group relative col-span-1 h-auto w-full flex-none transform justify-start overflow-hidden p-6 shadow-lg transition duration-75 ease-in-out ${
-    colSpan || 'md:col-span-2'
-  } ${rowSpan || ''} ${href ? 'cursor-pointer hover:border-primary' : ''}`}
+<div
+  class={`card-animate group relative col-span-1 h-auto w-full overflow-hidden rounded-xl border p-6 transition-all duration-300 ease-out
+    ${colSpan || 'md:col-span-2'}
+    ${rowSpan || ''}
+    ${href ? 'cursor-pointer' : ''}`}
+  style="background-color: var(--card-bg); border-color: var(--border-line);"
 >
+  <div
+    class="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+    style="box-shadow: inset 0 0 60px var(--gold-glow); border: 1px solid var(--gold); border-radius: inherit;"
+  ></div>
+
   {
     href ? (
-      <a href={href} class={`block h-full w-full ${colorText || ' '}`}>
+      <a href={href} class={`block h-full w-full ${colorText || ''}`}>
         <SquareArrowOutUpRight
-          className="group-hover:text-primary position absolute right-6 "
-          size={20}
+          className="absolute right-5 top-5 opacity-0 transition-all duration-200 group-hover:opacity-100"
+          size={16}
+          style={{ color: 'var(--gold)' }}
         />
         <ContentCard title={title} body={body}>
           <slot />
@@ -37,4 +44,4 @@ const { title, body, colSpan, rowSpan, href, colorText } = Astro.props
       </ContentCard>
     )
   }
-</ShadcnCard>
+</div>

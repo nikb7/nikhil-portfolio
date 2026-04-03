@@ -1,13 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import Card from '../Card.astro'
-import { Button } from '../ui/button'
 import { formateLocalDate } from "../../lib/utils";
-
 
 let projects = await getCollection('projects');
 
-// sort projects by dateStart DESC
 projects.sort((a: any, b: any) => {
   return new Date(b.data.startDate) - new Date(a.data.startDate);
 });
@@ -15,27 +11,33 @@ projects.sort((a: any, b: any) => {
 projects = projects.slice(0, 3);
 ---
 
-
-<div class="mt-2 space-y-4">
+<div class="mt-1 flex flex-col gap-4">
   {
-    projects.slice(0, 3).map((project) => (
-      <div>
-        <h3 class="text-lg font-semibold text-primary">
-          <a href={`/projects/${project.id}`} class="hover:underline">
+    projects.map((project) => (
+      <div class="group/item flex flex-col gap-0.5">
+        <h3 class="text-base font-semibold leading-tight transition-colors duration-150"
+            style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem;">
+          <a href={`/projects/${project.id}`}
+             style="color: var(--parchment);"
+             onmouseover="this.style.color='var(--gold)'"
+             onmouseout="this.style.color='var(--parchment)'">
             {project.data.title}
           </a>
         </h3>
-        <p class="text-sm">
+        <p class="text-xs leading-relaxed" style="color: var(--parchment); opacity: 0.55; font-family: 'Plus Jakarta Sans', sans-serif;">
           {project.data.description}
         </p>
-        <p class="text-sm text-gray-600">
-          {formateLocalDate(project.data.startDate)} {project.data?.endDate ? '- ' + formateLocalDate(project.data.endDate) : ''}
+        <p class="text-xs" style="color: var(--gold); opacity: 0.6; font-family: 'DM Mono', monospace;">
+          {formateLocalDate(project.data.startDate)}{project.data?.endDate ? ' — ' + formateLocalDate(project.data.endDate) : ''}
         </p>
       </div>
     ))
   }
-  <a href="/projects">
-    <Button variant="link" className="pl-0"> View More</Button>
+  <a href="/projects"
+     class="mt-1 text-xs font-medium tracking-wide transition-colors duration-150"
+     style="color: var(--gold); font-family: 'Plus Jakarta Sans', sans-serif; opacity: 0.8; text-decoration: underline; text-underline-offset: 3px;"
+     onmouseover="this.style.opacity='1'"
+     onmouseout="this.style.opacity='0.8'">
+    View all →
   </a>
 </div>
-

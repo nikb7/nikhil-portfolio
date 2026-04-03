@@ -1,64 +1,57 @@
 ---
-import {buttonVariants} from '../components/ui/button'
 import {ModeToggle} from '../components/react/ThemeToggle'
 import {PROFILE} from "../content/profileData";
-
-const SITE = PROFILE.site
 ---
 
-<header
-  class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
->
-  <div
-    class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0"
-  >
-    <div class="flex gap-6 md:gap-10">
-      <a href="/" class="flex items-center space-x-2">
-        <span class="inline-block font-bold">{PROFILE.name}</span>
-      </a>
-    </div>
-    <div class="flex flex-1 items-center justify-end space-x-4">
-      <nav class="flex items-center space-x-1">
-        {/*
-        <a
-          href="/posts"
-          class={buttonVariants({variant: 'ghost'})}
-        >
-          Blog
-        </a>
-        */}
-        <a
-          href="/projects"
-          class={buttonVariants({variant: 'ghost'})}
-        >
-          Projects
-        </a>
-        <a
-          href={PROFILE.repo}
-          target="_blank"
-          rel="noreferrer"
-          class={buttonVariants({variant: 'ghost'})}
-        >
-          GitHub
-        </a>
+<header class="sticky top-0 z-50 w-full backdrop-blur-md"
+        style="background-color: hsl(var(--background) / 0.88); border-bottom: 1px solid var(--border-line);">
+  <div class="container flex h-14 items-center justify-between px-4 max-w-6xl mx-auto">
+    <a href="/" class="group flex items-center gap-2">
+      <span class="text-2xl font-bold italic transition-colors duration-200"
+            style="font-family: 'Plus Jakarta Sans', sans-serif; color: var(--gold);">
+        {PROFILE.firstName}
+      </span>
+      <span class="text-sm font-medium tracking-wide opacity-60 transition-opacity duration-200 group-hover:opacity-100"
+            style="font-family: 'Plus Jakarta Sans', sans-serif;">
+        Bansal
+      </span>
+    </a>
 
+    <nav class="flex items-center gap-1">
+      <a href="/projects"
+         class="px-3 py-1.5 text-sm font-medium tracking-wide transition-colors duration-200 rounded-md hover:bg-white/5"
+         style="font-family: 'Plus Jakarta Sans', sans-serif; color: var(--parchment); opacity: 0.7;"
+         onmouseover="this.style.opacity='1'; this.style.color='var(--gold)'"
+         onmouseout="this.style.opacity='0.7'; this.style.color='var(--parchment)'">
+        Projects
+      </a>
+      <a href={PROFILE.repo}
+         target="_blank"
+         rel="noreferrer"
+         class="px-3 py-1.5 text-sm font-medium tracking-wide transition-colors duration-200 rounded-md hover:bg-white/5"
+         style="font-family: 'Plus Jakarta Sans', sans-serif; color: var(--parchment); opacity: 0.7;"
+         onmouseover="this.style.opacity='1'; this.style.color='var(--gold)'"
+         onmouseout="this.style.opacity='0.7'; this.style.color='var(--parchment)'">
+        GitHub
+      </a>
+      <div class="ml-2">
         <ModeToggle transition:persist client:load/>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </div>
 </header>
 
-
 <script is:inline>
   document.addEventListener('astro:after-swap', function () {
-    if (localStorage.getItem('theme') === 'dark')
-      document.documentElement.classList.toggle('dark', true)
+    const isDarkAfterSwap = localStorage.getItem('theme') !== 'light'
+    document.documentElement.classList.toggle('dark', isDarkAfterSwap)
   })
 
   const getThemePreference = () => {
     return localStorage.getItem('theme')
   }
 
-  const isDark = getThemePreference() === 'dark'
+  // Default to dark if no preference stored
+  const isDark = getThemePreference() !== 'light'
   document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
 </script>
