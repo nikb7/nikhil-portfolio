@@ -1,19 +1,19 @@
 {
-  "site": "https://techtim42.com",
-  "id": "TechTim42",
-  "name": "@tim-hub/techtim42",
+  "site": "https://nikb.in",
+  "id": "nikhil-portfolio",
+  "name": "@nikb7/portfolio",
   "version": "1.0.0",
-  "fullName": "Tech Tim",
-  "description": "Learn, Share and Grow ❤️ -- Software Engineer | AWS Professional | Open Source Lover  --☘️ Be more productive, Better in communicating, Contribute more to community ",
+  "fullName": "Nikhil Bansal",
+  "description": "Personal portfolio — Astro, TypeScript, React, Tailwind, shadcn/ui.",
   "author": {
-    "name": "Tech Tim",
-    "url": "https://TechTim42.com"
+    "name": "Nikhil Bansal",
+    "url": "https://nikb.in"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tim-hub/techtim-astro-bento-portfolio"
+    "url": "https://github.com/nikb7/nikhil-portfolio"
   },
-  "homepage": "https://techtim42.com",
+  "homepage": "https://nikb.in",
   "keywords": [
     "astro",
     "portfolio",
