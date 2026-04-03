@@ -36,3 +36,6 @@ yarn-error.log*
 /.astro/
 env.d.ts
 /dist/
+
+# claude
+.claude/settings.local.json
