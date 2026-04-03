@@ -1,0 +1,31 @@
+---
+slug: "flutter-inline-prediction"
+title: "Contributor – Flutter"
+description: "Added opt-in inline prediction text input support for iOS 17+ to the Flutter framework."
+startDate: 2025-06-01
+image:
+  {
+    url: "/assets/flutter-logo.svg",
+    alt: "Flutter Logo",
+  }
+tags: ["Open Source", "Flutter", "iOS", "Dart", "Text Input"]
+---
+
+![](https://storage.googleapis.com/cms-storage-bucket/6e19fee6b47b36ca613f.png)
+
+[Flutter](https://github.com/flutter/flutter) is Google's open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.
+
+### My Contribution
+
+Exposed inline prediction configuration through Flutter text fields so apps can explicitly control iOS 17+ inline predictive text behavior and ensure the engine handles attributed marked text correctly.
+
+**Key changes across 11 files (framework + engine):**
+
+- Added `enableInlinePrediction` option to `TextInputConfiguration`, `EditableText`, `TextField`, and `CupertinoTextField`
+- Mapped `enableInlinePrediction` to `UITextInlinePredictionType` on iOS 17+ in the engine
+- Handled `setAttributedMarkedText:selectedRange:` by forwarding the plain string to the existing marked text flow
+- Kept the feature opt-in, preserving existing behavior by default
+
+This gives Flutter apps explicit control over inline predictive text on supported iOS versions.
+
+[View Pull Request on GitHub](https://github.com/flutter/flutter/pull/183650)
