@@ -21,25 +21,25 @@ const SITE = PROFILE.site
     transition:animate="fade"
     class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-12 lg:gap-4"
   >
-    <Card colSpan="lg:col-span-9 md:col-span-2" rowSpan="md:row-span-1 lg:row-span-4">
+    <Card colSpan="lg:col-span-9 md:col-span-2" rowSpan="md:row-span-1 lg:row-span-4" order={1}>
       <IntroCard/>
     </Card>
-    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-6" title="About me">
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-6" title="About me" order={2}>
       <AboutMe/>
     </Card>
 
-    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-4" title="Projects">
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-3 lg:row-span-4" title="Projects" order={3}>
       <Projects/>
     </Card>
 
-    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2" title="Your time">
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2" title="Your time" order={4}>
       <TimeZoneCard/>
     </Card>
-    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2" title="My time">
+    <Card colSpan="lg:col-span-3 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2" title="My time" order={5}>
       <TimeZoneCard timezone={PROFILE.timezone} />
     </Card>
 
-    <Card colSpan="lg:col-span-4 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2">
+    <Card colSpan="lg:col-span-4 md:col-span-1" rowSpan="md:row-span-1 lg:row-span-2" order={6}>
       <div class="flex h-full flex-col justify-center">
         <p class="text-xs mb-3 uppercase tracking-widest" style="color: var(--gold); font-family: 'DM Mono', monospace; opacity: 0.6;">
           Mantra
@@ -53,15 +53,15 @@ const SITE = PROFILE.site
     </Card>
 
     <Card colSpan="md:col-span-1 lg:col-span-5" rowSpan="md:row-span-2 lg:row-span-2"
-          title="Education & Certificates">
+          title="Education & Certificates" order={7}>
       <StudyCard/>
     </Card>
 
-    <Card colSpan="md:col-span-1 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Experiences">
+    <Card colSpan="md:col-span-1 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Experiences" order={8}>
       <ExperienceCard/>
     </Card>
 
-    <Card colSpan="md:col-span-1 lg:col-span-6" rowSpan="md:row-span-2 lg:row-span-1" title="Contact">
+    <Card colSpan="md:col-span-1 lg:col-span-6" rowSpan="md:row-span-2 lg:row-span-1" title="Contact" order={9}>
       <div class="flex h-full w-full items-center justify-center text-center">
         <p class="text-sm leading-relaxed" style="font-family: 'Plus Jakarta Sans', sans-serif; color: var(--parchment); opacity: 0.65;">
           Let's build something together. Reach out via
